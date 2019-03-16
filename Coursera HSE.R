@@ -27,4 +27,17 @@ my_list$table
 
 my_list[[2]]
 
-# sasa
+install.packages(c("dplyr", "ggplot2", "GGally", "psych"))
+install.packages("devtools")
+library(devtools)
+install_github("bdemeshev/sophisthse")
+
+library(dplyr)
+library(ggplot2)
+library(GGally)
+library(psych)
+
+help("predict")
+help("??describe")
+
+help(lm)
