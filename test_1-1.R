@@ -45,3 +45,26 @@ model.matrix(model)
 nd <- data.frame(speed=c(50, 30))
 predict(model, nd)                 
 qplot(data=d2, speed, dist)+ stat_smooth(method="lm")
+
+
+####
+
+t <- swiss
+help(swiss)
+glimpse(t)
+describe(t) 
+ggpairs(t)
+model <- lm(data=t, 
+            Fertility~Agriculture+Education+Catholic)
+coef(model)
+fitted(model)
+residuals(model)
+deviance(model)
+
+report <- summary(model)
+report
+report$r.squared
+cor(t$Fertility, fitted(model))^2
+
+nd2 <- data.frame(Agriculture=0.5,Catholic=0.5, Education=0.2)
+predict(model, nd2)
